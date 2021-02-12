@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HODLINFO</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <div class="main-container">
+        <nav>
+            <h1 class="main-logo"><span id="logo">HODLINFO</span>.com</h1>
+            <h5 class="sub-head">Powered By <span class="color">Fintreet</span></h5>
+            <div id="inr">
+                <select><option value="0">INR</option></select>
+            </div>
+            <div id="btc">
+                <select><option value="0">BTC</option></select>
+            </div>
+            
+            
+            <div id="number">58</div>
+            <a href=""><div class="connect"><img src="https://img.icons8.com/ios/50/000000/telegram-app.png"/> Connect Telegram</div></a>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+            
+        </nav>
+        <div class="list-table">
+            <table style="width: 100%">
+                <tr id="label">
+                    <th>#</th>
+                    <th>name</th>
+                    <th>Last</th>
+                    <th>Buy / Sell Price</th>
+                    <th>Volume</th>
+                    <th>base_unit</th>
+                </tr>
+                
+                <!-- using ejs syntax for rendering data from backend -->
+                <%for(var i=0;i< currency_data.length; i++ ){%>
+                <tr class="list">
+                    <th class="number"><%=i+1%></th>
+                    <th><%=currency_data[i].name%></th>
+                    <th class="number">&#8377 <%=currency_data[i].last%></th>
+                    <th class="number">&#8377 <%=currency_data[i].buy%> / &#8377 <%=currency_data[i].sell%></th>
+                    <th class="number"><%=currency_data[i].volume%></th>
+                    <th><%=currency_data[i].base_unit%></th>
+                </tr>
+                 <%}%>
+            </table>
+
+        </div>
+        
+    </div>
+
+
+</body>
+</html>
